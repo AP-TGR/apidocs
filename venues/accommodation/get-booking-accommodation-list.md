@@ -78,6 +78,32 @@ The unique id of the booking to which the accommodation belongs
                 "numFreeRooms": 1
             }
         ],
+        "dayRatesActual": [
+            {
+                "bookingDate": "2018-08-27",
+                "numRooms": 11,
+                "cost": 180,
+                "numPayableByGuest": 11,
+            },
+            {
+                "bookingDate": "2018-08-28",
+                "numRooms": 12,
+                "cost": 190,
+                "numPayableByGuest": 12,
+            },
+            {
+                "bookingDate": "2018-08-29",
+                "numRooms": 13,
+                "cost": 175,
+                "numPayableByGuest": 13,
+            },
+            {
+                "bookingDate": "2018-08-30",
+                "numRooms": 0,
+                "cost": 0,
+                "numPayableByGuest": 0,
+            }
+        ],
         "excludedTaxIds": [],
         "roomOptions": [
             {
@@ -133,6 +159,7 @@ The result from this call will be a [collection](../../getting-started/interpret
 | costcenterId | integer | The unique id of the cost center assigned to the accommodation group |
 | cutOffDate | date | The date after which changes to the accommodation group are not allowed |
 | dayRates | array of [Day Rates](get-booking-accommodation-list.md#booking-accommodation-day-rates) | The daily rates of the accommodation group |
+| dayRatesActual | array of [Day Rates Actual](get-booking-accommodation-list.md#booking-accommodation-day-rates-actual) | The daily rates actual of the accommodation group |
 | excludedTaxIds | array of integers | The unique ids of the taxes that are excluded from the daily rates |
 | roomOptions | array of [Room Options](get-booking-accommodation-list.md#booking-accommodation-room-option) | The additional room options of the accommodation group |
 | createdDate | datetime | The date & time the accommodation group was created |
@@ -147,6 +174,15 @@ The result from this call will be a [collection](../../getting-started/interpret
 | cost | number | The rate amount for the room on bookingDate. The amount either includes or excludes tax depending on how the venue is configured |
 | numPayableByGuest | integer | The number of rooms on bookingDate that are payable by guests \(as opposed to the master account of the booking\) |
 | numFreeRooms | integer | The number of complimentary \(free\) rooms on bookingDate. This number is included in numRooms |
+
+## Booking Accommodation Day Rates Actual
+
+| Property | Type | Description |
+| :--- | :--- | :--- |
+| bookingDate | date | The date of the accommodation group to which the rate applies |
+| numRooms | integer | The actual number of rooms booked on bookingDate |
+| cost | number | The actual rate amount for the room on bookingDate. The amount either includes or excludes tax depending on how the venue is configured |
+| numPayableByGuest | integer | The actual number of rooms on bookingDate that are payable by guests \(as opposed to the master account of the booking\) |
 
 ## Booking Accommodation Room Option
 
